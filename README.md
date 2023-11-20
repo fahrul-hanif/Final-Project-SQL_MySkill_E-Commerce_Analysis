@@ -1,6 +1,6 @@
 # E-Commerce-SQL-Analysis
 
-Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari project akhir Bootchamp Data Analis oleh MySkill. Project ini menggunakan dataset Ecommerce Tokopaedi(dummy) ini berisi transaksi dari bulan Januari 2021 sampai bulan Desember 2022. Dataset terdidri dari:
+Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari project akhir Bootchamp Data Analis oleh MySkill. Project ini menggunakan dataset Ecommerce Tokopaedi(data dummy) ini berisi transaksi dari bulan Januari 2021 sampai bulan Desember 2022. Dataset terdidri dari:
 1.  order_detail, berisi detail data order yang terdiri dari:
       * id → angka unik dari order / id_order
       * customer_id → angka unik dari pelanggan
