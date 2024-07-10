@@ -30,9 +30,9 @@ Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari proje
 
   ## Case Study
   1. Selama transaksi yang terjadi selama 2021, pada bulan apa total nilai transaksi (after_discount) paling besar?
-     <details>
-     <summary>Query nomor 1 </summary>
-     ``` sql
+<details>
+<summary>Query nomor 1 </summary>
+``` sql
      select 
             format_date("%B", date(order_date)) as bulan,
             sum(after_discount) as total_sales
@@ -43,8 +43,8 @@ Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari proje
      group by 1
      order by 2 desc
      limit 5;
-     ```
-     <details>
+```
+<details>
      
      ![](Images/no1_study_case.png)
      
