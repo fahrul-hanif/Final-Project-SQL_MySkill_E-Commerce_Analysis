@@ -28,29 +28,31 @@ Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari proje
       * id → angka unik dari metode pembayaran
       * payment_method → metode pembayaran yang digunakan
 
-  ## Case Study
-  1. Selama transaksi yang terjadi selama 2021, pada bulan apa total nilai transaksi (after_discount) paling besar?
-          <details>
-          <summary>Query nomor 1 </summary>
-          ``` sql
-               select 
-                      format_date("%B", date(order_date)) as bulan,
-                      sum(after_discount) as total_sales
-               from `latihan-sql-1-399313.tokopaedi.order_detail`
-               where
-                 is_valid=1 
-                 and extract(year from order_date) = 2021
-               group by 1
-               order by 2 desc
-               limit 5;
-          ```
-          </details>
+## Case Study
+1. Selama transaksi yang terjadi selama 2021, pada bulan apa total nilai transaksi (after_discount) paling besar?
+<details>
+<summary>Query nomor 1 </summary>
+
+``` sql
+select
+    format_date("%B", date(order_date)) as bulan,
+    sum(after_discount) as total_sales
+from `latihan-sql-1-399313.tokopaedi.order_detail`
+where
+    is_valid=1 
+    nd extract(year from order_date) = 2021
+ group by 1
+rder by 2 desc
+limit 5;
+```
+
+</details>
      
-     ![](Images/no1_study_case.png)
+![](Images/no1_study_case.png)
+
+Berdasarkan tabel yang telah didapat, pada tahun 2021 nilai transaksi paling besar berada pada bulan Agustus sebesar      227862744.0
      
-     Berdasarkan tabel yang telah didapat, pada tahun 2021 nilai transaksi paling besar berada pada bulan Agustus sebesar      227862744.0
-     
-  2. Selama transaksi pada tahun 2022, kategori apa yang menghasilkan nilai transaksi paling besar?
+  3. Selama transaksi pada tahun 2022, kategori apa yang menghasilkan nilai transaksi paling besar?
      <details>
      <summary>Query nomor 2</summary>
      select 
@@ -71,7 +73,7 @@ Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari proje
      
      kagetori yang menghasilkan nilai transaksi paling besar, yaitu kategori Mobiles & Tablets sebesar 918451576.0
      
- 3. Bandingkan nilai transaksi dari masing-masing kategori pada tahun 2021 dengan 2022. Sebutkan kategori apa saja yang         mengalami peningkatan dan kategori apa yang mengalami penurunan nilai transaksi dari tahun 2021 ke 2022.
+ 4. Bandingkan nilai transaksi dari masing-masing kategori pada tahun 2021 dengan 2022. Sebutkan kategori apa saja yang         mengalami peningkatan dan kategori apa yang mengalami penurunan nilai transaksi dari tahun 2021 ke 2022.
      <details>
           <summary>Query nomor 3</summary>
      ''' sql
@@ -100,7 +102,7 @@ Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari proje
      
      Berdasarkan tabel yang diperoleh di atas terdapat 13 kategori yang mengalami peningkatan, tiga teratas yang menalami        peningkatan adalah kategori mobiles & Tablets, Entertainment dan Appliances. Sedangkan terdapat dua kategori yang           mengalami penurunan yaitu kategori Books dan kategori Others.
 
-  4. Tampilkan top 5 metode pembayaran yang paling populer digunakan selama 2022! (berdasarkan total unique order)
+  5. Tampilkan top 5 metode pembayaran yang paling populer digunakan selama 2022! (berdasarkan total unique order)
      <details>
           <summary>Query nomor 4</summary>
      ``` sql
@@ -123,7 +125,7 @@ Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari proje
      
      Top 5 metode pembayaran paling populer yang digunakan selama tahun 2022 secara berurutan dari yang terbesar jumlah          transaksinya, yaitu COD, Payaxis, Customercredit, Easypay dan Jazzwallet
 
-5.  Urutan produk berdasarkan nilai transaksinya (Samsung, Apple, Sony, Huawei, Lenovo)
+6.  Urutan produk berdasarkan nilai transaksinya (Samsung, Apple, Sony, Huawei, Lenovo)
      <details>
           <summary>Query nomor 5</summary>
      ``` sql
