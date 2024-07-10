@@ -57,6 +57,7 @@ Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari proje
 2. Selama transaksi pada tahun 2022, kategori apa yang menghasilkan nilai transaksi paling besar?
      <details>
      <summary>Query nomor 2</summary>
+          
      ''' sql
      select 
           sd.category,
@@ -82,6 +83,7 @@ Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari proje
  3. Bandingkan nilai transaksi dari masing-masing kategori pada tahun 2021 dengan 2022. Sebutkan kategori apa saja yang mengalami peningkatan dan kategori apa yang mengalami penurunan nilai transaksi dari tahun 2021 ke 2022.
      <details>
      <summary>Query nomor 3</summary>
+          
      ``` sql
      with data as(
      select
@@ -109,11 +111,12 @@ Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari proje
      
      ![](Images/no3_study_case.png)
           
-     Berdasarkan tabel yang diperoleh di atas terdapat 13 kategori yang mengalami peningkatan, tiga teratas yang menalami peningkatan adalah kategori mobiles & Tablets, Entertainment dan Appliances. Sedangkan terdapat dua kategori yang mengalami penurunan yaitu kategori Books dan kategori Others.
+     Berdasarkan tabel yang diperoleh di atas terdapat 13 kategori yang mengalami peningkatan, tiga teratas yang mengalami peningkatan adalah kategori __mobiles & Tablets__, __Entertainment__ dan __Appliances__. Sedangkan terdapat dua kategori yang mengalami penurunan yaitu kategori __Books__ dan __kategori Others__.
 
 4. Tampilkan top 5 metode pembayaran yang paling populer digunakan selama 2022! (berdasarkan total unique order)
      <details>
      <summary>Query nomor 4</summary>
+          
      ``` sql
      select 
           pd.payment_method as metode_pembayaran,
@@ -139,6 +142,7 @@ Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari proje
 5.  Urutan produk berdasarkan nilai transaksinya (Samsung, Apple, Sony, Huawei, Lenovo)
      <details>
      <summary>Query nomor 5</summary>
+          
      ``` sql
                with a as
                  (select
@@ -170,4 +174,4 @@ Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari proje
      
      ![](Images/no5_study_case.png)
           
-     produk __Samsung__berada diurutan pertama dengan nilai transaksi __588764148.0__ diikuti oleh __Apple__ sebesar __445282530.0__, lalu __Sony__ sebesar __63960718.0__, __Huawei__ sebesar __63160260.0__ dan __Lenovo__ diperingkat ke-lima dengan nilai transaksi __62379800.4__.
+     produk __Samsung__ berada diurutan pertama dengan nilai transaksi __588764148.0__ diikuti oleh __Apple__ sebesar __445282530.0__, lalu __Sony__ sebesar __63960718.0__, __Huawei__ sebesar __63160260.0__ dan __Lenovo__ diperingkat ke-lima dengan nilai transaksi __62379800.4__.
