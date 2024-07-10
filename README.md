@@ -58,7 +58,7 @@ Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari proje
      <details>
      <summary>Query nomor 2</summary>
           
-     ''' sql
+     ``` sql
      select 
           sd.category,
           round(sum(od.after_discount),2) total
@@ -71,7 +71,7 @@ Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari proje
      group by 1
      order by 2 desc
      limit 5;
-     '''
+     ```
      </details>
 
      Tabel Ouput:
@@ -144,29 +144,29 @@ Dataset yang digunakan pada project ini adalah dataset yang diperoleh dari proje
      <summary>Query nomor 5</summary>
           
      ``` sql
-               with a as
-                 (select
-                 case
-                   when lower(sd.sku_name) like '%samsung%' then 'Samsung'
-                   when lower(sd.sku_name) like '%iphone%' or lower(sd.sku_name) like '%ipad%' 
-                   or lower(sd.sku_name) like '%macbook%' or lower(sd.sku_name) like '%apple%' then 'Apple'
-                   when lower(sd.sku_name) like '%sony%' then 'Sony'
-                   when lower(sd.sku_name) like '%huawei%'then 'Huawei'
-                   when lower(sd.sku_name) like '%lenovo%' then 'Lenovo'
-                   else 'lainnya'
-                   end as nama_produk,
-                 sum(od.after_discount) as nilai_transaksi
-                 from `latihan-sql-1-399313.tokopaedi.order_detail` as od
-                 join `latihan-sql-1-399313.tokopaedi.sku_detail` as sd
-                 on od.sku_id = sd.id
-                 where
-                   is_valid=1
-                 group by 1
-                 )
-                 select nama_produk, nilai_transaksi
-                 from a
-                 where nama_produk != 'lainnya'
-                 order by 2 desc;
+     with a as(
+     select
+     case
+          when lower(sd.sku_name) like '%samsung%' then 'Samsung'
+          when lower(sd.sku_name) like '%iphone%' or lower(sd.sku_name) like '%ipad%' 
+          or lower(sd.sku_name) like '%macbook%' or lower(sd.sku_name) like '%apple%' then 'Apple'
+          when lower(sd.sku_name) like '%sony%' then 'Sony'
+          when lower(sd.sku_name) like '%huawei%'then 'Huawei'
+          when lower(sd.sku_name) like '%lenovo%' then 'Lenovo'
+     else 'lainnya'
+     end as nama_produk,
+     sum(od.after_discount) as nilai_transaksi
+     from `latihan-sql-1-399313.tokopaedi.order_detail` as od
+     join `latihan-sql-1-399313.tokopaedi.sku_detail` as sd
+     on od.sku_id = sd.id
+     where
+     is_valid=1
+     group by 1
+     )
+     select nama_produk, nilai_transaksi
+     from a
+     where nama_produk != 'lainnya'
+     order by 2 desc;
      ```
      </details>
 
